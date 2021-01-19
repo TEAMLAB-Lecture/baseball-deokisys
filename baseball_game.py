@@ -287,16 +287,16 @@ def main():
     # 위의 코드를 포함하여 자유로운 수정이 가능함
     while True:
         # 유저 입력 받기
-        user_input = input("알아맞춰 보기:")
+        user_input = input("Input guess number : ")
         # 제대로된 입력인지 확인
         if is_validated_number(str(user_input)):
             #스트라이크 볼 체크
             result = get_strikes_or_ball(str(user_input),random_number)
-            print(f"{result[0]}스트라이크, {result[1]}볼")
+            print(f"Strikes : {result[0]} , Balls : {result[1]}볼")
             if result[0]==3:
                 # 한번더 할지 체크
                 while True:
-                    user_choice = input("이기셨습니다 더하시겠나요?[y|n]")
+                    user_choice = input("You win, one more(Y/N) ?")
                     if is_yes(user_choice):
                         # 다시 랜덤번호 설정
                         random_number = str(get_not_duplicated_three_digit_number())
@@ -305,11 +305,11 @@ def main():
                     elif is_no(user_choice):
                         break
                     else:
-                        print("잘못된 입력입니다")
+                        print("Wrong Input, Input again")
                 if is_no(user_choice):
                     break
         else:
-            print("중복되지않는 3자리 숫자를 적어주세요.")
+            print("Wrong Input, Input again")
     # ==================================
     print("Thank you for using this program")
     print("End of the Game")
