@@ -289,6 +289,8 @@ def main():
         # 유저 입력 받기
         user_input = input("Input guess number : ")
         # 제대로된 입력인지 확인
+        if user_input == '0':
+            break
         if is_validated_number(str(user_input)):
             #스트라이크 볼 체크
             result = get_strikes_or_ball(str(user_input),random_number)
